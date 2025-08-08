@@ -10,6 +10,7 @@ import { Calendar, Users, TrendingUp, Plus, Edit, Trash2, Eye, MapPin, Clock } f
 import Link from "next/link"
 import { format } from "date-fns"
 import { ja } from "date-fns/locale"
+import { PremiumUpgradeButton } from "@/components/payment/PremiumUpgradeButton"
 
 export default function DashboardPage() {
   const { data: session, status } = useSession()
@@ -172,12 +173,10 @@ export default function DashboardPage() {
                 </Button>
               </Link>
             ) : (
-              <Link href="/auth/signup?plan=premium">
-                <Button variant="outline">
-                  <Plus className="mr-2 h-4 w-4" />
-                  プレミアムにアップグレード
-                </Button>
-              </Link>
+              <PremiumUpgradeButton variant="outline">
+                <Plus className="mr-2 h-4 w-4" />
+                プレミアムにアップグレード
+              </PremiumUpgradeButton>
             )}
           </div>
 

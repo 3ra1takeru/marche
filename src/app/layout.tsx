@@ -3,6 +3,7 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import { Providers } from "@/components/providers"
 import { Header } from "@/components/layout/header"
+import { PWAInstallPrompt } from "@/components/pwa/PWAInstallPrompt"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -25,6 +26,7 @@ export default function RootLayout({
         <Providers>
           <Header />
           <main className="min-h-screen">{children}</main>
+          <PWAInstallPrompt />
         </Providers>
       </body>
     </html>
